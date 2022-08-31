@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+fieldset{
+    appearance: none;
+    outline: none;
+    border: none;
+
+    display: flex;
+    flex-flow: column nowrap;
+    width: 1016px;
+
+    padding: 0px;
+}
+
+fieldset > button{
+    align-self: flex-end;
+}
+
+.basic-section-container{
+    display: flex;
+    gap: 40px;
+}
+
+/*Overriding basic-section-container for practical experience*/
+
+.practical-experience-container > .basic-section-container{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.col-row{
+    display: flex;
+    gap: 40px;
+}
+
+.col{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+input{
+    appearance: none;
+    outline: none;
+    border: none;
+
+    width: 242px;
+    margin-left: 12px;
+
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    height: 24px;
+    padding-left: 6px;
+    border-radius: 3px;
+    box-shadow: inset 0px 7px 9px -10px hsl(0deg, 0%, 10%);
+    background-color: hsl(210deg, 10%, 55%);
+    border-bottom: thin solid hsl(210deg, 10%, 80%);
+}
+
+legend{
+    font-family: 'Montserrat';
+    font-weight: 200;
+    font-size: 26px;
+    width: 240px;
+}
+.text-input-container, .date-input-container, .main-tasks-container{
+    display: flex;
+    margin-bottom: 12px;
+
+    align-items: center;
+}
+
+.main-tasks-container{
+    margin-left: 284px;
+}
+
+.main-tasks-container > button{
+    margin-left: 12px;
+}
+
+
+
+.text-input-container > label, .date-input-container > label,
+.main-tasks-container > label{
+    width: 112px;
+
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+.col:nth-child(3) label{
+    width: 56px;
+}
+
+.education-section-container::before, .practical-experience-container::before{
+    content: ' ';
+    height: 1px;
+    border-bottom: 2px solid hsl(210deg, 10%, 30%);
+    margin-bottom: 24px;
+}

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+form{
+
+    background-color: hsl(210deg, 10%, 70%);
+    padding: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+
+    gap: 24px;
+
+    width: 1016px;
+}
+
+form > button{
+    align-self: flex-end;
+}
+
+button{
+    appearance: none;
+    outline: none;
+    border: none;
+    width: 120px;
+    height: 30px;
+
+    
+    font-family: 'Montserrat';
+    color: white;
+    background-color: hsl(210deg, 30%, 50%);
+    border-top: thin solid hsl(210deg, 30%, 80%);
+    box-shadow: 0px 1px 1px 1px hsl(0deg, 0%, 2%);
+    border-radius: 6px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button:active{
+    box-shadow: none;
+}
