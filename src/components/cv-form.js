@@ -18,10 +18,12 @@ class Form extends React.Component{
             eduStartDate: '',
             eduEndDate: '',
             expHistory: [],
-            company: '',
+            companyName: '',
             position: '',
             expStartDate: '',
             expEndDate: '',
+            mainTask: '',
+            mainTaskHistory: [],
         }
         this.updateForm = this.updateForm.bind(this)
     }
@@ -35,17 +37,22 @@ class Form extends React.Component{
     render(){
         const {firstName, lastName, email, phoneNumber} = this.state;
         const {school, studyTitle, eduStartDate, eduEndDate} = this.state;
-        const {company, position, expStartDate, expEndDate} = this.state;
-        const {updateForm} = this.state;
+        const {companyName, position, expStartDate, expEndDate} = this.state;
+
         return (
             <form action="#">
                 <GeneralInfo firstName={firstName} lastName={lastName} 
                 email={email} phoneNumber={phoneNumber}
                 updateForm={this.updateForm}/>
+                
                 <Education school={school} studyTitle={studyTitle}
-                eduStartDate={eduStartDate} eduEndDate={eduEndDate}/>
-                <PracticalExperience company={company} position={position} 
-                expStartDate={expStartDate} expEndDate={expEndDate}/>
+                eduStartDate={eduStartDate} eduEndDate={eduEndDate}
+                updateForm={this.updateForm}/>
+                
+                <PracticalExperience companyName={companyName} position={position} 
+                expStartDate={expStartDate} expEndDate={expEndDate}
+                updateForm={this.updateForm}/>
+
                 <button>Submit Form</button>
             </form>
         )

@@ -4,6 +4,12 @@ import '../styles/section-style.css'
 class Education extends React.Component{
     constructor(props){
         super(props);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event){
+        const {name, value} = event.target;
+        this.props.updateForm(name, value);
     }
 
     render(){
@@ -16,13 +22,15 @@ class Education extends React.Component{
                             <label htmlFor="school">
                                 School
                             </label>
-                            <input type="text" id="school"/>
+                            <input name="school" type="text" id="school"
+                            value={this.props.school} onChange={this.handleChange}/>
                         </div>
                         <div className="text-input-container">
                             <label htmlFor="study-title">
                                 Title of Study
                             </label>
-                            <input type="text" id="study-title"/>
+                            <input name="studyTitle" type="text" id="study-title"
+                            value={this.props.studyTitle} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="col">
@@ -30,13 +38,15 @@ class Education extends React.Component{
                             <label htmlFor="start-date">
                                 From
                             </label>
-                            <input type="date" id="start-date"/>
+                            <input name="eduStartDate" type="date" id="start-date"
+                            value={this.props.eduStartDate} onChange={this.handleChange}/>
                         </div>
                         <div className="date-input-container">
                             <label htmlFor="end-date">
                                 To
                             </label>
-                            <input type="date" id="end-date"/>
+                            <input name="eduEndDate" type="date" id="end-date"
+                            value={this.props.eduEndDate} onChange={this.handleChange}/>
                         </div>
                     </div>
                 </div>
