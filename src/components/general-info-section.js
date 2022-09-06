@@ -4,6 +4,12 @@ import '../styles/section-style.css'
 class GeneralInfo extends React.Component{
     constructor(props){
         super(props);
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event){
+        const {name, value} = event.target;
+        this.props.updateForm(name, value);
     }
 
     render(){
@@ -16,13 +22,15 @@ class GeneralInfo extends React.Component{
                             <label htmlFor="first-name">
                                 First Name
                             </label>
-                            <input type="text" id="first-name"/>
+                            <input name="firstName" type="text" id="first-name"
+                            value={this.props.firstName} onChange={this.handleChange}/>
                         </div>
                         <div className="text-input-container">
                             <label htmlFor="last-name">
                                 Last Name
                             </label>
-                            <input type="text" id="last-name"/>
+                            <input name="lastName" type="text" id="last-name"
+                            value={this.props.lastName} onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="col">
@@ -30,13 +38,15 @@ class GeneralInfo extends React.Component{
                             <label htmlFor="email">
                                 Email
                             </label>
-                            <input type="text" id="email"/>
+                            <input name="email" type="email" id="email"
+                            value={this.props.email} onChange={this.handleChange}/>
                         </div>
                         <div className="text-input-container">
                             <label htmlFor="phone">
                                 Phone
                             </label>
-                            <input type="text" id="phone"/>
+                            <input name="phoneNumber" type="number" id="phone"
+                            value={this.props.phoneNumber} onChange={this.handleChange}/>
                         </div>
                     </div>
                 </div>
