@@ -7,6 +7,22 @@ import '../styles/form-style.css'
 class Form extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            firstName: '',
+            lastName: '',
+            email: '',
+            phoneNumber: '',
+            eduHistory: [],
+            school: '',
+            studyTitle: '',
+            eduStartDate: '',
+            eduEndDate: '',
+            expHistory: [],
+            companyName: '',
+            position: '',
+            expStartDate: '',
+            expEndDate: '',
+        }
     }
 
     render(){
