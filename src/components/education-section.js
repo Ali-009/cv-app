@@ -5,11 +5,17 @@ class Education extends React.Component{
     constructor(props){
         super(props);
         this.handleChange = this.handleChange.bind(this);
+        this.handleEduSubmit = this.handleEduSubmit.bind(this);
     }
 
     handleChange(event){
         const {name, value} = event.target;
         this.props.updateForm(name, value);
+    }
+
+    handleEduSubmit(event){
+        event.preventDefault();
+        this.props.updateEduHistory();
     }
 
     render(){
@@ -50,7 +56,7 @@ class Education extends React.Component{
                         </div>
                     </div>
                 </div>
-                <button>Add</button>
+                <button onClick={this.handleEduSubmit}>Add</button>
             </fieldset>
         )
     }

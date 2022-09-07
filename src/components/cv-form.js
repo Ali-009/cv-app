@@ -26,12 +26,31 @@ class Form extends React.Component{
             mainTaskHistory: [],
         }
         this.updateForm = this.updateForm.bind(this)
+        this.updateEduHistory = this.updateEduHistory.bind(this)
     }
 
     updateForm(key, value){
         this.setState({
             [key]: value,
         })
+    }
+
+    updateEduHistory(){
+    
+        this.setState(function(state){
+            const {school, studyTitle, eduStartDate, eduEndDate} = state;
+
+            return {
+                /*Using concat() with this.state is safe because concat() returns
+                a new array and doesn't mutate the state directly unlike the push() method*/
+                eduHistory: this.state.eduHistory.concat([{
+                    school,
+                    studyTitle,
+                    eduStartDate,
+                    eduEndDate,
+                }]),
+            }
+        });
     }
 
     render(){
@@ -47,7 +66,7 @@ class Form extends React.Component{
                 
                 <Education school={school} studyTitle={studyTitle}
                 eduStartDate={eduStartDate} eduEndDate={eduEndDate}
-                updateForm={this.updateForm}/>
+                updateForm={this.updateForm} updateEduHistory={this.updateEduHistory}/>
                 
                 <PracticalExperience companyName={companyName} position={position} 
                 expStartDate={expStartDate} expEndDate={expEndDate}
