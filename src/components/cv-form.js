@@ -55,7 +55,7 @@ class Form extends React.Component{
 
     render(){
         const {firstName, lastName, email, phoneNumber} = this.state;
-        const {school, studyTitle, eduStartDate, eduEndDate} = this.state;
+        const {school, studyTitle, eduStartDate, eduEndDate, eduHistory} = this.state;
         const {companyName, position, expStartDate, expEndDate} = this.state;
 
         return (
@@ -63,10 +63,12 @@ class Form extends React.Component{
                 <GeneralInfo firstName={firstName} lastName={lastName} 
                 email={email} phoneNumber={phoneNumber}
                 updateForm={this.updateForm}/>
-                
+            
+
                 <Education school={school} studyTitle={studyTitle}
                 eduStartDate={eduStartDate} eduEndDate={eduEndDate}
-                updateForm={this.updateForm} updateEduHistory={this.updateEduHistory}/>
+                updateForm={this.updateForm} updateEduHistory={this.updateEduHistory}
+                eduHistory={eduHistory}/>
                 
                 <PracticalExperience companyName={companyName} position={position} 
                 expStartDate={expStartDate} expEndDate={expEndDate}
