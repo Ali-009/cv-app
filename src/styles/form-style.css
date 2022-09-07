@@ -11,6 +11,8 @@ form{
     width: 1016px;
     border-radius: 6px;
     box-shadow: 5px 5px 1px hsl(0deg, 0%, 10%, 0.5);
+
+    overflow: auto;
 }
 
 form > button{

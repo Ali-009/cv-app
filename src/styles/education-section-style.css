@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+.edu-history{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.education-submitted{
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: flex-start;
+
+    margin-bottom: 12px;
+}
+
+.data-container{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.edu-info-row, .edu-data-row{
+    display: flex;
+    flex-flow: row nowrap;
+
+    font-family: 'Montserrat';
+    width: 1016px;
+    font-weight: 400;
+
+    margin-left: 150px;
+}
+
+.output-text-container{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.edu-submitted-text{
+    font-family: 'Montserrat';
+    margin-left: 14px;
+}

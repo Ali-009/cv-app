@@ -58,12 +58,17 @@ input{
     border-bottom: thin solid hsl(210deg, 10%, 80%);
 }
 
-legend{
+h2, legend{
     font-family: 'Montserrat';
     font-weight: 200;
     font-size: 26px;
     width: 240px;
 }
+
+.education-section-container legend{
+    visibility: hidden;
+}
+
 .text-input-container, .date-input-container, .main-tasks-container{
     display: flex;
     margin-bottom: 12px;
@@ -92,8 +97,11 @@ legend{
 .col:nth-child(3) label{
     width: 56px;
 }
+.education-wrapper::before{
+    display: block;
+}
 
-.education-section-container::before, .practical-experience-container::before{
+.education-wrapper::before, .practical-experience-container::before{
     content: ' ';
     height: 1px;
     border-bottom: 2px solid hsl(210deg, 10%, 30%);

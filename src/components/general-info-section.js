@@ -45,7 +45,7 @@ class GeneralInfo extends React.Component{
                             <label htmlFor="phone">
                                 Phone
                             </label>
-                            <input name="phoneNumber" type="number" id="phone"
+                            <input name="phoneNumber" type="tel" id="phone"
                             value={this.props.phoneNumber} onChange={this.handleChange}/>
                         </div>
                     </div>

@@ -40,14 +40,17 @@ class Form extends React.Component{
         this.setState(function(state){
             const {school, studyTitle, eduStartDate, eduEndDate} = state;
 
+            const formattedStartDate = new Date(eduStartDate).toLocaleDateString('en-GB')
+            const formattedEndDate = new Date(eduEndDate).toLocaleDateString('en-GB')
+
             return {
                 /*Using concat() with this.state is safe because concat() returns
                 a new array and doesn't mutate the state directly unlike the push() method*/
                 eduHistory: this.state.eduHistory.concat([{
                     school,
                     studyTitle,
-                    eduStartDate,
-                    eduEndDate,
+                    eduStartDate: formattedStartDate,
+                    eduEndDate: formattedEndDate,
                 }]),
             }
         });

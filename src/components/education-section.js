@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/section-style.css'
+import '../styles/education-section-style.css'
 import uniqid from "uniqid"
 
 class Education extends React.Component{
@@ -22,46 +23,23 @@ class Education extends React.Component{
     render(){
         return (
             <div className="education-wrapper">
-                {this.props.eduHistory.map((eduElement) => {
-                    return (
-                        <div key={uniqid()} className="education-submitted">
-                            <div className="col">
-                                <div className="output-text-container">
-                                    <div className="edu-submitted-label">
-                                        School
+                <div className="data-container">
+                    <h2>Education</h2>
+                    <div className="edu-history">
+                        {this.props.eduHistory.map((eduElement) => {
+                            return (
+                                <div key={uniqid()} className="education-submitted">
+                                    <div className="edu-info-row"> 
+                                        {'Studied '+eduElement.studyTitle + ' in ' + eduElement.school}
                                     </div>
-                                    <div className="edu-submitted-text">
-                                        {eduElement.school}                                        
-                                    </div>
-                                </div>
-                                <div className="output-text-container">
-                                    <div className="edu-submitted-label">
-                                        Study Title
-                                    </div>
-                                    <div className="edu-submitted-text">
-                                        {eduElement.studyTitle}
+                                    <div className="edu-data-row">
+                                            {'From ' + eduElement.eduStartDate+ ' to '+eduElement.eduEndDate}
                                     </div>
                                 </div>
-                            </div>
-                            <div className="col">
-                                <div className="output-text-container">
-                                    <div className="edu-submitted-label">
-                                        From
-                                    </div>
-                                    <div className="edu-submitted-text">
-                                        {eduElement.eduStartDate}
-                                    </div>
-                                    <div className="edu-submitted-label">
-                                        To
-                                    </div>
-                                    <div className="edu-submitted-text">
-                                        {eduElement.eduEndDate}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })}
+                            )
+                        })}
+                    </div>
+                </div>
                 <fieldset className="education-section-container">
                     <div className="basic-section-container">
                         <legend>Education</legend>
