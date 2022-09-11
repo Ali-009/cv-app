@@ -3,6 +3,38 @@ import '../styles/section-style.css'
 import '../styles/education-section-style.css'
 import uniqid from "uniqid"
 
+class EducationHistory extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+            <div className="edu-history">
+                {this.props.eduHistory.map((eduElement) => {
+                    const handleEduEdit = function (event){
+                        event.preventDefault();
+                        //pass down which element is to be edited in the eduHistory array
+                        const targetIndex = event.target.getAttribute('data-entry-index');
+                    }
+
+                    return (
+                        <div key={uniqid()} className="education-submitted">
+                            <div className="edu-info-row"> 
+                                {'Studied '+eduElement.studyTitle + ' in ' + eduElement.school}
+                            </div>
+                            <div className="edu-data-row">
+                                    {'From ' + eduElement.eduStartDate+ ' to '+eduElement.eduEndDate}
+                            </div>
+                            <button onClick={handleEduEdit} data-entry-index={eduElement.entryIndex}>Edit</button>
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
+}
+
 class Education extends React.Component{
     constructor(props){
         super(props);
@@ -25,20 +57,7 @@ class Education extends React.Component{
             <div className="education-wrapper">
                 <div className="data-container">
                     <h2>Education</h2>
-                    <div className="edu-history">
-                        {this.props.eduHistory.map((eduElement) => {
-                            return (
-                                <div key={uniqid()} className="education-submitted">
-                                    <div className="edu-info-row"> 
-                                        {'Studied '+eduElement.studyTitle + ' in ' + eduElement.school}
-                                    </div>
-                                    <div className="edu-data-row">
-                                            {'From ' + eduElement.eduStartDate+ ' to '+eduElement.eduEndDate}
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
+                <EducationHistory eduHistory={this.props.eduHistory} editEduHistory={this.props.editEduHistory}/>
                 </div>
                 <fieldset className="education-section-container">
                     <div className="basic-section-container">

@@ -23,7 +23,7 @@ class Form extends React.Component{
             expStartDate: '',
             expEndDate: '',
             mainTask: '',
-            mainTaskHistory: [],
+            mainTaskHistory: []
         }
         this.updateForm = this.updateForm.bind(this)
         this.updateEduHistory = this.updateEduHistory.bind(this)
@@ -38,7 +38,7 @@ class Form extends React.Component{
     updateEduHistory(){
     
         this.setState(function(state){
-            const {school, studyTitle, eduStartDate, eduEndDate} = state;
+            const {school, studyTitle, eduStartDate, eduEndDate, eduHistory} = state;
 
             const formattedStartDate = new Date(eduStartDate).toLocaleDateString('en-GB')
             const formattedEndDate = new Date(eduEndDate).toLocaleDateString('en-GB')
@@ -47,13 +47,20 @@ class Form extends React.Component{
                 /*Using concat() with this.state is safe because concat() returns
                 a new array and doesn't mutate the state directly unlike the push() method*/
                 eduHistory: this.state.eduHistory.concat([{
+                    entryIndex: eduHistory.length,
                     school,
                     studyTitle,
                     eduStartDate: formattedStartDate,
-                    eduEndDate: formattedEndDate,
+                    eduEndDate: formattedEndDate
                 }]),
             }
         });
+    }
+
+    editEduHistory(){
+        this.setState(function(state){
+            
+        })
     }
 
     render(){
